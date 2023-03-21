@@ -139,5 +139,61 @@ for gen in range(generation):
 screen.exitonclick()
 ```
 
+# Arvore: 
+<p align="center">
+<img src="floco de neve.gif" width="460" height="300">
+</p>
+
+```javascrip
+import turtle
+
+# Define the fractal function
+def fractal(length, depth):
+    if depth == 0:
+        # Draw a square for the house base
+        for i in range(4):
+            turtle.forward(length)
+            turtle.left(90)
+        # Draw a triangle for the roof
+        turtle.penup()
+        turtle.goto(-length/2, length/2)
+        turtle.pendown()
+        turtle.setheading(0)
+        turtle.forward(length)
+        turtle.left(120)
+        turtle.forward(length)
+        turtle.left(120)
+        turtle.forward(length)
+    else:
+        # Recursively draw four smaller house fractals
+        fractal(length / 2, depth - 1)
+        turtle.penup()
+        turtle.goto(turtle.xcor() + length/2, turtle.ycor() - length/2)
+        turtle.pendown()
+        fractal(length / 2, depth - 1)
+        turtle.penup()
+        turtle.goto(turtle.xcor() - length/2, turtle.ycor() - length/2)
+        turtle.pendown()
+        fractal(length / 2, depth - 1)
+        turtle.penup()
+        turtle.goto(turtle.xcor() - length/2, turtle.ycor() + length/2)
+        turtle.pendown()
+        fractal(length / 2, depth - 1)
+
+# Set up the turtle window
+turtle.setup(800, 800)
+turtle.hideturtle()
+turtle.speed(0)
+turtle.penup()
+turtle.goto(-200, -200)
+turtle.pendown()
+
+# Call the fractal function
+fractal(400, 4)
+
+# Keep the turtle window open until it is manually closed
+turtle.done()
+```
+
 
 
