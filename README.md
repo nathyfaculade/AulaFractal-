@@ -1,4 +1,4 @@
-# AulaFractal
+# AulaFractal ⭐
 
 <p>O que são Fractal?</p>
 
@@ -9,7 +9,7 @@ só que numa escala de tamanho menor. </p>
 <p>Uma das características definidoras dos fractais é seu detalhe infinito. Ao ampliar um fractal, você continuará a ver versões cada vez menores do mesmo padrão. </p>
 <p>Essa propriedade é conhecida como "autossimilaridade", o que significa que o padrão parece o mesmo em diferentes níveis de escala.</p>
 
-<p> Criar um triangulo: </p>
+# Criar um triangulo: 🔺🔺🔺
 
 <p align="center">
 <img src="GIF 20-03-2023 20-18-59.gif" width="460" height="300">
@@ -42,7 +42,7 @@ turtle.listen()
 turtle.done()
 ```
 
-<p> Criar um estrela: </p>
+# Criar um estrela: ⭐
 <p align="center">
 <img src="estrela.gif" width="460" height="300">
 </p>
@@ -62,7 +62,7 @@ for i in range(5):
     turtle.done()
 ```
 
-<p> Criar um Espiral Quadrado: </p>
+# Criar um Espiral Quadrado: 🟪
 <p align="center">
 <img src="espiral.gif" width="460" height="300">
 </p>
@@ -77,7 +77,67 @@ for i in range(0,700,10):
     turtle.left(90)
 ```
 
-<p> Criar um Factal Floco de Neve: </p>
+# Criar um Factal Floco de Neve: ❄️
 <p align="center">
 <img src="floco de neve.gif" width="460" height="300">
 </p>
+
+```javascrip
+import time
+import turtle
+
+#Config. screen
+WIDTH, HEIGHT = 1600, 900
+screen = turtle.Screen()
+screen.setup(WIDTH, HEIGHT)
+screen.screensize(2*WIDTH, 2*HEIGHT)
+screen.bgcolor('black')
+screen.delay(0)
+
+
+#Config. Turtle
+trig = turtle.Turtle()
+trig.pensize(2)
+trig.speed(1)
+trig.setpos(-WIDTH // 6, HEIGHT // 6)
+trig.color('gold')
+
+# L-system
+generation = 5
+axiom = 'F++F++F'
+chr_1, rule_1 = 'F', 'F-F++F-F'
+#chr_2, rule_2 = 'G', 'GG'
+step = 600
+angle = 60
+
+
+def apply_rules(axiom):
+    return ''.join([rule_1 if chr == chr_1 else chr for chr in axiom])
+
+for gen in range(generation):
+    turtle.pencolor('white')
+    turtle.goto(-WIDTH // 2 + 60, HEIGHT // 2 - 100)
+    turtle.clear()
+    turtle.write(f'Geração: {generation}', font=('Arial', 60, "normal"))
+
+    trig.setheading(0)
+    trig.goto(-WIDTH // 6, HEIGHT // 6)
+    trig.clear()
+
+    length = step / pow(3, gen)
+
+    for chr in axiom:
+        if chr == chr_1:
+            trig.forward(length)
+        elif chr == '+':
+            trig.right(angle)
+        elif chr == '-':
+            trig.left(angle)
+
+    axiom = apply_rules(axiom)
+
+screen.exitonclick()
+```
+
+
+
