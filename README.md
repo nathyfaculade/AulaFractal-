@@ -141,7 +141,7 @@ screen.exitonclick()
 
 # Arvore: 
 <p align="center">
-<img src="floco de neve.gif" width="460" height="300">
+<img src="arvore.gif" width="460" height="300">
 </p>
 
 ```javascrip
