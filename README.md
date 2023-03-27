@@ -64,7 +64,7 @@ for i in range(5):
 
 # Criar um Espiral Quadrado: 🟪
 <p align="center">
-<img src="espiral.gif" width="460" height="300">
+<img src="aspiral.gif" width="460" height="300">
 </p>
 
 ```javascrip
