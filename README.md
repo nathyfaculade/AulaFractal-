@@ -195,7 +195,7 @@ fractal(400, 4)
 turtle.done()
 ```
 
-#Meu Factal
+# Meu Factal
 
 <p align="center">
 <img src="triangulo.gif" width="460" height="300">
