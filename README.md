@@ -79,7 +79,7 @@ for i in range(0,700,10):
 
 # Criar um Factal Floco de Neve: ❄️
 <p align="center">
-<img src="floco de neve.gif" width="460" height="300">
+<img src="neve.gif" width="460" height="300">
 </p>
 
 ```javascrip
